@@ -9,6 +9,7 @@ beforeAll(() => {
   jest.spyOn(console, 'error').mockImplementation(() => {})
 })
 
+// good use of mockRestore, clearAllMocks and stubbing the console
 afterAll(() => {
   console.error.mockRestore()
 })

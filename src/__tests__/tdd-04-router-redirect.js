@@ -40,5 +40,8 @@ test('renders a form with title, content, tags, and a submit button', async () =
   })
   expect(mockSavePost).toHaveBeenCalledTimes(1)
 
+  // keep the callback slim because it will take a considerable
+  // amount of time to run like 4-5 seconds if it fails and keeps
+  // retrying until it times out for e.g. arguments that can't be found
   await wait(() => expect(MockRedirect).toHaveBeenCalledWith({to: '/'}, {}))
 })
